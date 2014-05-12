@@ -1,0 +1,58 @@
+{
+    "fileTypes": [
+        "DrCalendar"
+    ],
+    "keyEquivalent": "^~C",
+    "name": "Calendar",
+    "patterns": [
+        
+        // {
+        //     "match": "[\\s]{3}",
+        //     "name": "comment.probel"
+        // },
+
+        // { 
+        //   "name": "week",
+        //   "begin": "(^[\\s]{3}.{14})(.{6})([\\s]{3}.{14})(.{6})([\\s]{3}.{14})(.{6})",
+        //   "beginCaptures": {
+        //         // "1": { "name": "variable1" },
+        //         "2": { "name": "variable" },
+        //         // "3": { "name": "variable1" },
+        //         "4": { "name": "variable" },
+        //         // "5": { "name": "variable1" },
+        //         "6": { "name": "variable" }
+        //         },
+        //   "patterns": [
+        //       //{ "include": "$self" },
+        //       { "match": "[\\d]{1,2}" , "name": "variable" }
+        //    ],
+        //    "end": "\\n}"
+        // },
+        {   
+            "match": "(\\*[\\d]*)",
+            "name": "today",
+            "captures": {
+                "1": { "name": "variable" }
+            }
+        }
+        // ,
+        // { "match": "(^[\\s]{3}.{14})(.{6})([\\s]{3}.{14})(.{6})([\\s]{3}.{14})(.{6})",
+        //   "name": "variable_week",
+        //   "captures": {
+        //         "1": { "name": "variable1" },
+        //         "2": { "name": "constant" },
+        //         "3": { "name": "variable1" },
+        //         "4": { "name": "variable" },
+        //         "5": { "name": "variable1" },
+        //         "6": { "name": "variable" }
+        //    },
+        //    "patterns": [
+        //         { "name": "string.ssraw", "match": "\\*[\\d]*" }
+        //    ]
+
+        // }
+        
+    ],
+    "scopeName": "DrCalendar",
+    "uuid": "95752430-ddd1-49e1-adf8-aba0a8ef1602"
+}

@@ -1,0 +1,3 @@
+[
+    { "caption": "DrCalendar: Show panel", "command": "dr_months_calendar_open" },
+]
