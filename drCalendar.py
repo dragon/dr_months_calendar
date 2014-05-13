@@ -56,7 +56,10 @@ class DrMonthsCalendarOpen(sublime_plugin.TextCommand):
 		return True		
 	def run(self, edit):	
 		loc = locale.getlocale() # get current locale
-		locale.setlocale(locale.LC_ALL, '')
+		if sys.version[0] == "2":
+			locale.setlocale(locale.LC_ALL, 'C')
+		else:
+			locale.setlocale(locale.LC_ALL, '')
 		c = calendar.TextCalendar()
 		# self.view.insert(edit, self.view.sel().begin(), c.formatmonth(2013,9))
 		today = datetime.date.today()#+datetime.timedelta(days=10) #debug
@@ -101,6 +104,7 @@ class DrMonthsCalendarOpen(sublime_plugin.TextCommand):
 		self.output_view.insert(edit, self.output_view.size(),"\n".join(c4))
 		self.output_view.insert(edit, self.output_view.size(), "\n"+today.strftime('   %A %x'))
 		
+		locale.setlocale(locale.LC_ALL, loc)
 
 		
 		# self.output_view.insert(edit, self.output_view.size(),"\n".join(c22)+'\n')
