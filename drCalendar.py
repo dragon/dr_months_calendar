@@ -26,13 +26,13 @@ class TDrCalend():
         today = datetime.date.today()#+datetime.timedelta(days=10) #debug
         self.dd = datetime.date(self.y, self.m, 1)
         # s = '{:      %B %Y}\n'.format(self.dd)
-        s = '{: %B %Y}'.format(self.dd)
-        s = '{: ^21}'.format(s)+"\n"
+        s = '{0: %B %Y}'.format(self.dd)
+        s = '{0: ^21}'.format(s)+"\n"
         # s += '\n'
         
         for w in mc:
             for d in w:
-            	s += ' ' + '{:%a}'.format(d)[0:2]
+            	s += ' ' + '{0:%a}'.format(d)[0:2]
             s += '\n'
             break
         
@@ -40,9 +40,9 @@ class TDrCalend():
             for d in w:
                 if (d.month == self.m):
                     if d == today:
-                        s += '{:>3}'.format('*'+str(d.day))
+                        s += '{0:>3}'.format('*'+str(d.day))
                     else:
-                        s += '{:>3}'.format(d.day)
+                        s += '{0:>3}'.format(d.day)
                 else:
                     s += "   "
             s += "\n"
@@ -71,18 +71,18 @@ class DrMonthsCalendarOpen(sublime_plugin.TextCommand):
 		c4 = []
 
 		for x in range(0,8):
-			if len(c11) <= x: # нет строки
-				c4.append('{: >23}'.format(""))
+			if len(c11) <= x: 
+				c4.append('{0: >23}'.format(""))
 			else:
-				c4.append('{: >23}'.format(c11[x]))   # use '*' as a fill char
-			if len(c22) <= x: # нет строки
-				c4[x] = c4[x] + '  ' +'{: <21}'.format("")
+				c4.append('{0: >23}'.format(c11[x]))   # use '*' as a fill char
+			if len(c22) <= x: 
+				c4[x] = c4[x] + '  ' +'{0: <21}'.format("")
 			else:
-				c4[x] = c4[x] + '  ' +'{: <21}'.format(c22[x])
-			if len(c33) <= x:  # нет строки
-				c4[x] = c4[x] + '  ' +'{: <21}'.format("")
+				c4[x] = c4[x] + '  ' +'{0: <21}'.format(c22[x])
+			if len(c33) <= x:  
+				c4[x] = c4[x] + '  ' +'{0: <21}'.format("")
 			else:
-				c4[x] = c4[x] + '  ' +'{: <21}'.format(c33[x])
+				c4[x] = c4[x] + '  ' +'{0: <21}'.format(c33[x])
 
 		# for pos in self.view.sel():
 		# 	b = pos.begin()
