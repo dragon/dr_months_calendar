@@ -97,7 +97,7 @@ class DrMonthsCalendarOpen(sublime_plugin.TextCommand):
 		self.output_view = self.view.window().get_output_panel("textarea_drcalendar")
 		self.view.window().run_command("show_panel", {"panel": "output.textarea_drcalendar"})
 		# self.output_view.run_command("set_file_type", {"Packages/DrCalendar/DrCalendar.tmLanguage"})
-		self.output_view.set_syntax_file("Packages/DrMonthsCalendar/DrCalendar.tmLanguage")
+		self.output_view.set_syntax_file("Packages/dr_months_calendar/DrCalendar.tmLanguage")
 		self.output_view.set_read_only(False)
 
 		# self.output_view.insert(edit, self.output_view.size(), today.strftime('   %A %x')+"\n\n")
