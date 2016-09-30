@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>DrCalendar</string>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^~C</string>
+	<key>name</key>
+	<string>Calendar</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\*[\d]*)</string>
+			<key>name</key>
+			<string>today</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>DrCalendar</string>
+	<key>uuid</key>
+	<string>95752430-ddd1-49e1-adf8-aba0a8ef1602</string>
+</dict>
+</plist>
