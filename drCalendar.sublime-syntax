@@ -1,0 +1,25 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: DrCalendar
+file_extensions:
+  - DrCalendar
+scope: DrCalendar
+contexts:
+  main:
+  - match: (?i)\d{4}
+    scope: DrCalendar.year
+  - match: (?i)(\d{,2}\.\d{,2}\.\d{4})
+    scope: DrCalendar.daymonthyear
+  - match: (?i)(\*\d+)
+    scope: DrCalendar.today
+  - match: (?i)\Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь
+    scope: DrCalendar.month
+  - match: (?i)\Пн|Вт|Ср|Чт|Пт|Сб|Вс
+    scope: DrCalendar.dayofweek
+  - match: (?i)\понедельник|вторник|среда|четверг|пятница|суббота|воскресенье
+    scope: DrCalendar.fulldayofweek
+  - match: (?<= )\d{1,2}(?= *) 
+    scope: DrCalendar.day
+
+
