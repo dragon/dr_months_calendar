@@ -7,19 +7,24 @@ file_extensions:
 scope: DrCalendar
 contexts:
   main:
+    # Год: yyyy
   - match: (?i)\d{4}
     scope: DrCalendar.year
-  - match: (?i)(\d{,2}\.\d{,2}\.\d{4})
-    scope: DrCalendar.daymonthyear
+    # День: d(d)
+  - match: (?<= )\d{,2}(?=[\s|*])
+    scope: DrCalendar.day
+    # Сегодняшний день: *d(d)
   - match: (?i)(\*\d+)
     scope: DrCalendar.today
-  - match: (?i)\Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь
+    # День, месяц, год: d(d)/mm/yyyy
+  - match: (?i)(\d{,2}\.\d{,2}\.\d{4})
+    scope: DrCalendar.daymonthyear
+    # Месяц: Апрель или April, название может состоять из любых нецифровых символов
+  - match: (?i)\D+(?= \d{4})
     scope: DrCalendar.month
-  - match: (?i)\Пн|Вт|Ср|Чт|Пт|Сб|Вс
+    # День недели: Пт или Fr, любые двубуквенные нецифровые символы
+  - match: (?<= )\D{,2}(?=\s)
     scope: DrCalendar.dayofweek
-  - match: (?i)\понедельник|вторник|среда|четверг|пятница|суббота|воскресенье
+    # День недели: пятница или friday, название может состоять из любых нецифровых символов
+  - match: (?i)\D+(?= \d+\.)
     scope: DrCalendar.fulldayofweek
-  - match: (?<= )\d{1,2}(?= *) 
-    scope: DrCalendar.day
-
-
