@@ -9,22 +9,22 @@ contexts:
   main:
     # Год: yyyy
   - match: (?i)\d{4}
-    scope: DrCalendar.year
+    scope: DrCalendar.Year
     # День: d(d)
   - match: (?<= )\d{,2}(?=[\s|*])
     scope: DrCalendar.day
     # Сегодняшний день: *d(d)
   - match: (?i)(\*\d+)
-    scope: DrCalendar.today
+    scope: keyword.DrCalendar.today
     # День, месяц, год: d(d)/mm/yyyy
   - match: (?i)(\d{,2}\.\d{,2}\.\d{4})
-    scope: DrCalendar.daymonthyear
+    scope: keyword.DrCalendar.daymonthyear
     # Месяц: Апрель или April, название может состоять из любых нецифровых символов
   - match: (?i)\D+(?= \d{4})
-    scope: DrCalendar.month
+    scope: string.DrCalendar.month
     # День недели: Пт или Fr, любые двубуквенные нецифровые символы
   - match: (?<= )\D{,2}(?=\s)
-    scope: DrCalendar.dayofweek
+    scope: string.DrCalendar.dayofweek
     # День недели: пятница или friday, название может состоять из любых нецифровых символов
   - match: (?i)\D+(?= \d+\.)
-    scope: DrCalendar.fulldayofweek
+    scope: string.DrCalendar.fulldayofweek
